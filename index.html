@@ -6,51 +6,102 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
 
 </head>
+
 <body>
     <div class='header'>
         <div class='container' style='font-family:Indie Flower'>
             <h1 class="my-name">Sevskii</h1>
             <div class='buttons'>
                 <div class='hidden-sm hidden-xs'>
-                    <div class="button"><a href='#'>About me</a></div>
-                    <div class="button"><a href='#'>Portfolio</a></div>
-                    <div class="button"><a href='#'>My bots</a></div>
-                    <div class="button"><a href='#'>My contacts</a></div>
+                    <a href='#' class="scroll-about button">About me</a>
+                    <a href='#' class="scroll-portfolio button">Portfolio</a>
+                    <a href='#' class="scroll-contacts button">My contacts</a>
                 </div>
                 <div class="visible-xs visible-sm dropdown">
                     <button class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-bars'></i></button>
                     <ul class='dropdown-menu'>
-                        <li>About me</li>
+                        <li class="scroll-about">About me</li>
                         <li class='white-line'></li>
-                        <li>Portfolio</li>
+                        <li class="scroll-portfolio">Portfolio</li>
                         <li class='white-line'></li>
-                        <li>My bots</li>
-                        <li class='white-line'></li>
-                        <li>My contacts</li>
+                        <li class="scroll-contacts">My contacts</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class='container'>
-        <div class='block well row'>
+    <div class='container content'>
+        <div class='block well row' id='about'>
             <div class='col-xs-6'>
-                <p>I am schoolar from Mother Russia. I have no solid skills right now, but i am trying to learn: HTML, CSS, JavaScript, Node.js, C#, MVC.NET and maybe oneday i'll become ninja.</p>
-                <p>I also have some steam bots that you might want to use.</p>
+                <h1>About me</h1>
+                <p>I am schoolar from Mother Russia. I have no solid skills right now, but i am trying to learn: HTML, CSS, JavaScript, Node.js, C#, MVC.NET, Blender and maybe oneday i'll become ninja.</p>
             </div>
             <div class='col-xs-6 text-center avatar'>
                 <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d5/d52f1391b175cac93872cac2db150b58d0855a90_full.jpg" />
             </div>
         </div>
-        <div class='block well row'>
-            <div class='col-xs-6'>
-                <div class='project'></div>
+        <div class='block well text-center' style='padding-bottom:0' id="portfolio">
+            <h1>Portfolio</h1>
+            <div class="category">
+                <h3>Front end</h3>
+                <div class="row block-row text-center">
+                    <div class='col-xs-12 col-md-6'>
+                        <a href='quote/index.html' target="_blank">
+                            <div class='project'>
+                                <div class='project-text'>Quote generator</div><img src="imgs/QuoteGenerator.png" />
+                            </div>
+                        </a>
+                    </div>
+                    <div class='col-xs-12 col-md-6'>
+                        <a href='/weather/index.html' target="_blank">
+                            <div class='project'>
+                                <div class='project-text'>Weater checker</div><img src="imgs/Weather.png" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class='col-xs-6'>
-
+            <div class="category">
+                <h3>Blender</h3>
+                <div class="row block-row text-center">
+                    <div class='col-xs-12 col-md-6'>
+                        <a href='http://i.imgur.com/B9llMbI.jpg' target="_blank">
+                            <div class='project'>
+                                <div class='project-text'>Bunny</div><img src="imgs/Bunny.jpg" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class='block well clearfix row' id="contacts">
+            <h1 class="col-xs-6">My contacts:</h1>
+            <div class="col-xs-6 contacts">
+                <div class="contact">
+                    <a href='mailto:sevskii111@gmail.com'><img src='https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300' />sevskii111@gmail.com</a>
+                </div>
+                <div class="contact">
+                    <a href='https://www.freecodecamp.com/sevskii'><img src='https://avatars0.githubusercontent.com/u/9892522?v=3&s=200' />Sevskii</a>
+                </div>
+                <div class="contact">
+                    <a href='https://www.linkedin.com/in/%D0%B2%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4-%D1%88-ab72a3132/'><img src='https://lh3.googleusercontent.com/00APBMVQh3yraN704gKCeM63KzeQ-zHUi5wK6E9TjRQ26McyqYBt-zy__4i8GXDAfeys=w300' />Всеволод Шаклеин</a>
+                </div>
+                <div class="contact">
+                    <a href='http://steamcommunity.com/id/sevskii/'><img src='https://help.steampowered.com/public/shared/images/responsive/share_steam_logo.png' />Sevskii</a>
+                </div>
+                <div class="contact">
+                    <a href='https://www.facebook.com/profile.php?id=100013001230706'><img src='https://www.facebook.com/images/fb_icon_325x325.png' />Vsevolod Shaklein</a>
+                </div>
+                <div class="contact">
+                    <a href='https://mobile.twitter.com/SevaShaklein'><img src='https://lh3.googleusercontent.com/32GbAQWrubLZX4mVPClpLN0fRbAd3ru5BefccDAj7nKD8vz-_NzJ1ph_4WMYNefp3A=w300' />@SevaShaklein</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer text-center">
+            sevskii © 2017. All Rights Reversed
     </div>
 </body>
