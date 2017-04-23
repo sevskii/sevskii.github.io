@@ -1,48 +1,85 @@
-.header{
-    background-color:indigo;
-    color:white;
-    font-size:50px;
+.header,
+.dropdown-menu {
+    background-color: indigo;
+    color: white;
 }
-.header a{
-    color:white;
+
+.header {
+    font-size: 50px;
+}
+
+.header a {
+    color: white;
     text-decoration: none;
 }
-.buttons,.my-name{
+
+.buttons,
+.my-name {
     display: inline-block;
 }
-.my-name{
-    font-size:50px;
-    margin:0;
-    padding:0;
-    margin-top:10px;
+
+.my-name {
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
     font-family: 'Abril Fatface', cursive;
 }
-.buttons{
-    float:right;
+
+.buttons {
+    float: right;
     font-size: 30px;
-    height:75px;
+    height: 75px;
     padding: 15px 0 15px 0;
 }
-.button{
+
+.button,
+.buttons i {
     display: inline-block;
-    height:100%;
+    height: 100%;
     background-color: darkblue;
     border-radius: 15px;
     text-align: center;
-    padding:5px;
+    padding: 5px;
     transition: background-color 0.1s;
     border: 2px blueviolet solid;
     overflow: hidden;
 }
-.button:hover{
+
+.buttons i {
+    width: 70px;
+}
+
+.button:hover {
     background-color: blueviolet;
 }
 
-.block{
+.block {
     margin: 10px 0 10px 0;
     font-size: 20px;
 }
 
-.avatar img{
-    border-radius: 1000px;
+.avatar img {
+    border-radius: 50%;
+}
+
+button {
+    background-color: transparent;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    font-size: 30px;
+}
+
+.white-line{
+    width:100%;
+    height:1px;
+    background-color:white;
 }

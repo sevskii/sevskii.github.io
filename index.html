@@ -2,17 +2,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower" />
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <div class='header'>
         <div class='container' style='font-family:Indie Flower'>
             <h1 class="my-name">Sevskii</h1>
             <div class='buttons'>
-                <div class="button"><a href='#'>About me</a></div>
-                <div class="button"><a href='#'>Portfolio</a></div>
-                <div class="button"><a href='#'>My bots</a></div>
-                <div class="button"><a href='#'>My contacts</a></div>
+                <div class='hidden-sm hidden-xs'>
+                    <div class="button"><a href='#'>About me</a></div>
+                    <div class="button"><a href='#'>Portfolio</a></div>
+                    <div class="button"><a href='#'>My bots</a></div>
+                    <div class="button"><a href='#'>My contacts</a></div>
+                </div>
+                <div class="visible-xs visible-sm dropdown">
+                    <button class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-bars'></i></button>
+                    <ul class='dropdown-menu'>
+                        <li>About me</li>
+                        <li class='white-line'></li>
+                        <li>Portfolio</li>
+                        <li class='white-line'></li>
+                        <li>My bots</li>
+                        <li class='white-line'></li>
+                        <li>My contacts</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -24,6 +42,14 @@
             </div>
             <div class='col-xs-6 text-center avatar'>
                 <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d5/d52f1391b175cac93872cac2db150b58d0855a90_full.jpg" />
+            </div>
+        </div>
+        <div class='block well row'>
+            <div class='col-xs-6'>
+                <div class='project'></div>
+            </div>
+            <div class='col-xs-6'>
+
             </div>
         </div>
     </div>
