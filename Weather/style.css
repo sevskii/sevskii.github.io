@@ -1,0 +1,23 @@
+*:*{
+  text-dacaration:none;
+}
+html,body{ margin:0; padding:0; height:100%; width:100%; }
+body{
+  background:url('https://i.ytimg.com/vi/ui6N0jMIFyM/maxresdefault.jpg') no-repeat center center;
+  background-size: cover;
+}
+.background-muffler{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:rgba(40,40,40,1);
+  transition: background 1s;
+  top:0;
+}
+
+.content{
+  color:white;
+  padding-top:5%;
+}
+
