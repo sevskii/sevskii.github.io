@@ -16,7 +16,7 @@ $(document).ready(function () {
         function loaded() {
             if (me.icon === null)
                 me.icon = 'https://static-cdn.jtvnw.net/jtv-static/404_preview-300x300.png';
-            me.el.html("<img src=" + me.icon + " /><p>" + me.title + "</p><i class='fa fa-circle " + (me.online ? "online" : "") + "'></i>");
+            me.el.html("<a href='https://www.twitch.tv/"+id+"' target='_blank'><img src=" + me.icon + " /><p>" + me.title + "</p></a><i class='fa fa-circle " + (me.online ? "online" : "") + "'></i>");
 
         }
 
