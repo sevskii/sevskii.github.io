@@ -1,0 +1,29 @@
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='style.css' />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class="content">
+            <div class='tabs text-center'>
+                <div class='tab active' id='tabs-all'>
+                    <div class="pointer"></div>All</div>
+                <div class='tab' id='tabs-online' data-filter='true'>
+                    <div class="pointer"></div>Online</div>
+                <div class='tab' id='tabs-offline' data-filter='false'>
+                    <div class="pointer"></div>Offline</div>
+            </div>
+            <div class="search-area raw well">
+                <i class='fa fa-search col-xs-1'></i>
+                <input type='text' class='form-control col-xs-11' id='filter' />
+                <div class='streams row'>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
