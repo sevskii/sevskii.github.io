@@ -1,10 +1,5 @@
-.content{
-    width:50%;
-    margin:auto;
-}
-
 .tabs {
-    margin:auto;
+    margin: auto;
     color: white;
     font-size: 40px;
     height: 50px;
@@ -20,7 +15,7 @@
     user-select: none;
 }
 
-#tabs-all{
+#tabs-all {
     background-color: coral;
 }
 
@@ -28,71 +23,91 @@
     background-color: greenyellow;
 }
 
-#tabs-offline{
+#tabs-offline {
     background-color: darkgrey;
 }
 
-.pointer{
+.pointer {
     position: absolute;
     background-color: inherit;
     width: 50px;
     height: 50px;
     transform: rotateZ(45deg);
-    top:10px;
-    left:50%;
-    margin-left:-25px;
+    top: 10px;
+    left: 50%;
+    margin-left: -25px;
     z-index: -1;
     opacity: 0;
 }
 
-.active .pointer{
+.active .pointer {
     opacity: 1;
 }
 
-.search-area{
-    margin:auto;
-    padding-top:32.5px;
+.search-area {
+    margin: auto;
+    padding-top: 32.5px;
 }
 
-.search-area i{
-    margin-left: -10px;
-    font-size: 35px;
+.search-area i {
+    margin-left: 5px;
+    margin-top: 2.5px;
+    font-size: 30px;
+    position: absolute;
 }
 
-.search-area input{
-    width:90%;
-    float:right;
+.search-area input {
+    padding-left: 40px;
+    width: 100%;
+    float: right;
 }
 
 .streams {
-    margin-top:75px;
+    margin-top: 75px;
 }
 
-.stream{
-    height:50px;
+.stream {
+    height: 50px;
     font-size: 20px;
     margin-bottom: 10px;
-
+    padding-right: 40px;
 }
 
-.stream *{
+.stream * {
     display: inline-block;
-
 }
 
-.stream img{
-    height:50px;
+.stream img {
+    height: 50px;
     border-radius: 50%;
 }
 
-.stream i{
+.stream i {
     position: absolute;
     font-size: 15px;
     margin-left: 5px;
-    margin-top:15px;
-    color:grey;
+    margin-top: 15px;
+    color: grey;
 }
 
-.stream .online{
-    color: limegreen;
+.stream a{
+    float:fleft;
+    width: 100%;
+    height:50px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.stream .online {
+    color: greenyellow;
+}
+
+.status{
+    color:greenyellow;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.a:hover{
+    text-decoration: none;
 }

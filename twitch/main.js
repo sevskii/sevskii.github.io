@@ -1,22 +1,23 @@
 //https://api.twitch.tv/kraken/streams/ESL_SC2?client_id=76ah1f29uaasef3lmlkhgobgj6qpnv&limit=1
 $(document).ready(function () {
-    var onlineFilter = null;
+    var onlineFilter = undefined;
     var filterStr = "";
 
     var chanels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
     var Stream = function (id) {
         var me = this;
-        this.el = $('<div class="stream col-xs-6"></div>');;
+        this.el = $('<div class="stream col-md-6 col-xs-12"></div>');;
         $('.streams').append(me.el);
         this.online = false;
         this.title = id;
         this.icon = '';
+        this.status = '';
 
         function loaded() {
             if (me.icon === null)
                 me.icon = 'https://static-cdn.jtvnw.net/jtv-static/404_preview-300x300.png';
-            me.el.html("<a href='https://www.twitch.tv/"+id+"' target='_blank'><img src=" + me.icon + " /><p>" + me.title + "</p></a><i class='fa fa-circle " + (me.online ? "online" : "") + "'></i>");
+            me.el.html("<a href='https://www.twitch.tv/"+id+"' target='_blank'><img src=" + me.icon + " /><p>" + me.title + "</p> <span class='status'>"+me.status+"</span></a><i class='fa fa-circle " + (me.online ? "online" : "") + "'></i>");
 
         }
 
@@ -35,6 +36,7 @@ $(document).ready(function () {
                 } else {
                     me.online = true;
                     me.icon = data.stream.channel.logo;
+                    me.status = data.stream.channel.status;
                     loaded();
                 }
 
@@ -55,7 +57,7 @@ $(document).ready(function () {
             streams[i].el.css('display', 'none');
         }
         for (var i = 0; i < streams.length; i++) {
-            if (streams[i].title.indexOf(filterStr) != -1) {
+            if (streams[i].title.toLocaleLowerCase().indexOf(filterStr.toLocaleLowerCase()) != -1) {
                 if (onlineFilter === undefined)
                     streams[i].el.css('display', 'block');
                 else if (onlineFilter && streams[i].online)
