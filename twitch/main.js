@@ -3,11 +3,11 @@ $(document).ready(function () {
     var onlineFilter = undefined;
     var filterStr = "";
 
-    var chanels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas",'cheatbanned'];
+    var chanels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", 'cheatbanned'];
 
     var Stream = function (id) {
         var me = this;
-        this.el = $("<a href='https://www.twitch.tv/"+id+"' target='_blank' class='stream col-md-6 col-xs-12'></div>></a>");;
+        this.el = $("<a href='https://www.twitch.tv/" + id + "' target='_blank' class='stream col-md-6 col-xs-12'></div>></a>");;
         $('.streams').append(me.el);
         this.online = false;
         this.title = id;
@@ -17,7 +17,7 @@ $(document).ready(function () {
         function loaded() {
             if (me.icon === null)
                 me.icon = 'https://static-cdn.jtvnw.net/jtv-static/404_preview-300x300.png';
-            me.el.html("<p><img src=" + me.icon + " />" + me.title + "\t<span class='status'>"+me.status+"</span></p><i class='fa fa-circle " + (me.online ? "online" : "") + "'></i>");
+            me.el.html("<p><img src=" + me.icon + " />" + me.title + "\t<span class='status'>" + me.status + "</span></p><i class='fa fa-circle " + (me.online ? "online" : "") + "'></i>");
 
         }
 
@@ -68,7 +68,7 @@ $(document).ready(function () {
         }
     }
 
-    $('#filter').keyup(function (){
+    $('#filter').keyup(function () {
         filterStr = $(this).val();
         filter();
     });

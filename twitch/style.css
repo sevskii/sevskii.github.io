@@ -54,12 +54,12 @@
     margin-top: 2.5px;
     font-size: 30px;
     position: absolute;
-    color:black;
+    color: black;
 }
 
 .search-area input {
     padding-left: 40px;
-    height:40px;
+    height: 40px;
     width: 100%;
     float: right;
 }
@@ -81,44 +81,44 @@
 .stream img {
     height: 50px;
     border-radius: 50%;
-    float:left;
-    margin-top:-10px;
+    float: left;
+    margin-top: -10px;
 }
 
 .stream i {
     font-size: 15px;
     padding-top: 17.5px;
     text-align: center;
-    width:30px;
-    height:90%;
+    width: 30px;
+    height: 90%;
     color: grey;
     position: absolute;
-    float:right;
+    float: right;
     margin-left: -31px;
     background-color: #303030;
 }
 
-.streams a{
+.streams a {
     padding: 0 5px 0 0;
 }
 
-.stream p{
-    height:50px;
+.stream p {
+    height: 50px;
     white-space: nowrap;
     overflow: hidden;
     padding-top: 10px;
     width: 100%;
-    border:2px #222222 solid;
+    border: 2px #222222 solid;
 }
 
 .stream .online {
     color: greenyellow;
 }
 
-.status{
-    color:greenyellow;
+.status {
+    color: greenyellow;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
