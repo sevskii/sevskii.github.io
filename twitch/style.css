@@ -1,6 +1,6 @@
 .tabs {
     margin: auto;
-    color: white;
+    color: #222222;
     font-size: 40px;
     height: 50px;
 }
@@ -54,10 +54,12 @@
     margin-top: 2.5px;
     font-size: 30px;
     position: absolute;
+    color:black;
 }
 
 .search-area input {
     padding-left: 40px;
+    height:40px;
     width: 100%;
     float: right;
 }
@@ -70,7 +72,6 @@
     height: 50px;
     font-size: 20px;
     margin-bottom: 10px;
-    padding-right: 40px;
 }
 
 .stream * {
@@ -80,22 +81,34 @@
 .stream img {
     height: 50px;
     border-radius: 50%;
+    float:left;
+    margin-top:-10px;
 }
 
 .stream i {
-    position: absolute;
     font-size: 15px;
-    margin-left: 5px;
-    margin-top: 15px;
+    padding-top: 17.5px;
+    text-align: center;
+    width:30px;
+    height:90%;
     color: grey;
+    position: absolute;
+    float:right;
+    margin-left: -31px;
+    background-color: #303030;
 }
 
-.stream a{
-    float:fleft;
-    width: 100%;
+.streams a{
+    padding: 0 5px 0 0;
+}
+
+.stream p{
     height:50px;
     white-space: nowrap;
     overflow: hidden;
+    padding-top: 10px;
+    width: 100%;
+    border:2px #222222 solid;
 }
 
 .stream .online {
@@ -104,8 +117,6 @@
 
 .status{
     color:greenyellow;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 a:hover{
