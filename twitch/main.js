@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     var Stream = function (id) {
         var me = this;
-        this.el = $("<a href='https://www.twitch.tv/" + id + "' target='_blank' class='stream col-md-6 col-xs-12'></div>></a>");;
+        this.el = $("<a href='https://www.twitch.tv/" + id + "' target='_blank' class='stream col-md-6 col-xs-12'></div></a>");;
         $('.streams').append(me.el);
         this.online = false;
         this.title = id;
