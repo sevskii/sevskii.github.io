@@ -47,10 +47,8 @@ $(document).ready(function () {
                 success: function (data) {
                     var resultsContent = $('<div></div>');
                     var results = data.query.search;
-                    console.log(results);
                     $('.result-area').html('');
                     for (var i = 0; i < results.length; i++) {
-                        console.log('<a href="https://en.wikipedia.org/wiki/' + encodeURI(results[i].title) + '"> <div class="result"> <h1 class="result-header">' + results[i].title + '</h1> <p class="result-description">' + results[i].snippet + '</p> </div> </a>');
                         $('.result-area').append('<a href="https://en.wikipedia.org/wiki/' + encodeURI(results[i].title) + '"> <div class="result"> <h1 class="result-header">' + results[i].title + '</h1> <p class="result-description">' + results[i].snippet + '</p> </div> </a>');
                     }
                 },
