@@ -1,0 +1,267 @@
+body{
+    background-color: burlywood;
+}
+
+.content {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #666666;
+    margin: auto;
+    margin-top: 100px;
+    font-size: 0;
+}
+.segment {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+}
+
+.top-left-segment {
+    border-top-left-radius: 100%;
+    background-color: #6cff2d;
+}
+
+.top-right-segment {
+    border-top-right-radius: 100%;
+    background-color: #ff2121;
+}
+
+.bot-left-segment {
+    border-bottom-left-radius: 100%;
+    background-color: #f7ff2d;
+}
+
+.bot-right-segment {
+    border-bottom-right-radius: 100%;
+    background-color: #3262ff;
+}
+
+.line-horizontal {
+    position: absolute;
+    width: 390px;
+    height: 30px;
+    background-color: #666666;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: 5px;
+}
+
+.line-vertical {
+    position: absolute;
+    width: 30px;
+    height: 390px;
+    background-color: #666666;
+    left: 50%;
+    top: 0;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+.panel-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #bababa;
+    top: 50%;
+    margin-top: -100px;
+    left: 50%;
+    margin-left: -100px;
+    border-radius: 50%;
+    border: 10px solid #666666;
+    box-sizing: border-box;
+}
+
+.panel-title {
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+.panel-title span {
+    font-size: 15px;
+    vertical-align: text-top;
+}
+
+.panel-counter {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: 20px;
+    border-radius: 10px;
+    background-color: #560000;
+}
+
+.counter-value {
+    font-family: monospace;
+    position: absolute;
+    height: 25px;
+    width: 40px;
+    margin-top: 2.5px;
+    text-align: center;
+    font-size: 25px;
+    z-index: 2;
+    color: #af0000;
+}
+
+.counter-line {
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    top: 50%;
+    margin-top: -2.5px;
+    background-color: #680000;
+    border-radius: 2px;
+}
+
+.counter-line.active {
+    background-color: #af0000;
+}
+
+.lines-1 {
+    margin-left: 9px;
+}
+
+.lines-2 {
+    margin-left: 21px;
+}
+
+.counter-label {
+    color: black;
+    position: relative;
+    height: 10px;
+    font-size: 10px;
+    top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.panel-start {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    left: 80px;
+}
+
+.start-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 3px #666666 solid;
+    box-shadow: 0 0 10px #888;
+}
+
+.start-btn:hover {
+    box-shadow: none;
+}
+
+.start-label {
+    color: black;
+    position: absolute;
+    height: 10px;
+    font-size: 10px;
+    top: 30px;
+    margin-left: -5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.panel-strict {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    left: 130px;
+}
+
+.strict-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 3px #666666 solid;
+    box-shadow: 0 0 10px #888;
+}
+
+.strict-btn:hover {
+    box-shadow: none;
+}
+
+.strict-label {
+    color: black;
+    position: absolute;
+    height: 10px;
+    font-size: 10px;
+    top: 30px;
+    margin-left: -7.5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.strict-lamp {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: -7.5px;
+    left: 5px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 1px #666 solid;
+    background-color: #680000;
+}
+
+.panel-switch {
+    position: relative;
+    height: 15px;
+    width: 70px;
+    left: 50%;
+    margin-left: -35px;
+    top: 55px;
+}
+
+.panel-switch * {
+    display: inline-block;
+}
+
+.switch-text {
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.switch-hole {
+    top: 2.5px;
+    position: absolute;
+    height: 100%;
+    ;
+    width: 25px;
+    margin-left: 2.5px;
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.switch-switcher {
+    width: 12px;
+    height: 13px;
+    margin-top: 1px;
+    margin-left: 1px;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+.switch-switcher:hover {
+    margin-left: 12px;
+}
+
+#text-on {
+    margin-left: 30px;
+}
