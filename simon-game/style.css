@@ -25,22 +25,22 @@ body {
 
 .top-left-segment {
     border-top-left-radius: 100%;
-    background-color: #6cff2d;
+    background-color: #4ec41b;
 }
 
 .top-right-segment {
     border-top-right-radius: 100%;
-    background-color: #ff2121;
+    background-color: #bc1212;
 }
 
 .bot-left-segment {
     border-bottom-left-radius: 100%;
-    background-color: #f7ff2d;
+    background-color: #b1b714;
 }
 
 .bot-right-segment {
     border-bottom-right-radius: 100%;
-    background-color: #3262ff;
+    background-color: #183eba;
 }
 
 .top-left-segment.active {
