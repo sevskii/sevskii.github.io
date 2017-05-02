@@ -1,0 +1,144 @@
+body {
+    background-color: #263238;
+}
+
+* {
+    user-select: none
+}
+
+a {
+    color: white;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+.content {
+    padding-top: 100px;
+    height: 960px;
+    overflow: hidden;
+}
+
+.clock-container {
+    position: relative;
+    transform: scale(0.8) rotateZ(180deg);
+    top: -130px;
+    width: 600px;
+    margin: auto;
+    overflow: hidden;
+    transition: transform 1s;
+}
+
+.clock {
+    position: relative;
+    width: 600px;
+    height: 1000px;
+    margin: auto;
+    background-color: transparent;
+    border: 25px #006064 solid;
+    box-sizing: border-box;
+}
+
+.blocker {
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    top: 0;
+    transform: rotateZ(45deg);
+    background-color: #263238;
+    left: -940px;
+    border: 25px #006064 solid;
+}
+
+.blocker-right {
+    left: 485px;
+}
+
+.status {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.timer {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    transform: rotateZ(180deg);
+}
+
+.timer-session {
+    top: 50px;
+}
+
+.timer-break {
+    top: 250px;
+}
+
+.progress-bar {
+    position: relative;
+    z-index: -1;
+    background-color: #8bc34a;
+    width: 100%;
+    margin-top: 355px;
+    height: 1px;
+}
+
+.progress-bar.progress-bar-break {
+    background-color: #2196f3;
+    top: -35px;
+}
+
+.controls {
+    top: 0;
+    left: 50%;
+    position: absolute;
+}
+
+.session-controls {
+    position: relative;
+    top: 670px;
+}
+
+.break-controls {
+    position: relative;
+    top: 70px;
+}
+
+.plus,
+.minus {
+    position: absolute;
+    font-size: 150px;
+    color: white;
+}
+
+.plus {
+    left: 270px;
+}
+
+.minus {
+    left: -320px;
+}
+
+.label {
+    position: absolute;
+    font-size: 75px;
+}
+
+.label-break {
+    width: 500px;
+    margin-left: -250px;
+    top: -80px;
+}
+
+.label-session {
+    width: 500px;
+    margin-left: -250px;
+    top: 190px;
+    left: 50%px;
+}
