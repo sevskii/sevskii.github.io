@@ -81,7 +81,7 @@ $(document).ready(function () {
         if (setUpState) {
             setUpState = false;
             sessionActive = true;
-            $('.controls').css('display', 'none');
+            $('.controls * *').css('display', 'none');
             $('.clock-container').css('transform', 'rotateZ(0) scale(0.8)');
             tick = setInterval(function () {
                 time++;
@@ -103,7 +103,7 @@ $(document).ready(function () {
             setUpState = true;
             clearInterval(tick);
             $('.clock-container').css('transform', 'rotateZ(180deg) scale(0.8)');
-            $('.controls').css('display', 'block');
+            $('.controls *').css('display', 'block');
             displayStatus();
         }
     });
@@ -119,14 +119,18 @@ $(document).ready(function () {
         } else {
             $('.timer-break').text('');
             $('.timer-session').text('');
+            $('.label-break').css('display', 'none');
+            $('.label-session').css('display', 'none');
             if (sessionActive) {
                 $('.timer').css('transform', 'rotateZ(0)');
+                $('.label-session').css('display', 'block');
                 $('.timer-session').text(formatTime(sessionTime - time));
                 var progress = time / sessionTime;
                 setActiveSessionProgress(1 - progress);
                 setPassiveSessionBreak(progress);
             } else {
                 $('.timer').css('transform', 'rotateZ(180deg)');
+                $('.label-break').css('display', 'block');
                 $('.timer-break').text(formatTime(breakTime - time));
                 var progress = time / breakTime;
                 setActiveSessionBreak(1 - progress);
