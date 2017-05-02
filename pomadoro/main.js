@@ -2,7 +2,7 @@ function setActiveSessionProgress(procent) {
     var height = 455 * procent,
         el = $('.progress-bar-session');
     el.css('height', height);
-    el.css('margin-top', 355 - height);
+    el.css('margin-top', 360 - height);
 }
 
 function setPassiveSessionProgress(procent) {
@@ -16,7 +16,7 @@ function setActiveSessionBreak(procent) {
     var height = 430 * procent,
         el = $('.progress-bar-break');
     el.css('height', height);
-    el.css('margin-top', '-100px');
+    el.css('margin-top', '-125px');
 }
 
 function setPassiveSessionBreak(procent) {
