@@ -4,6 +4,7 @@ $(document).ready(function () {
             audio = a;
         this.activate = function () {
             el.addClass('active');
+            audio.currentTime = 0;
             audio.play();
 
         };
