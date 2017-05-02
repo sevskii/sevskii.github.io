@@ -49,7 +49,8 @@ $(document).ready(function () {
         sessionActive = false,
         time = 0,
         setUpState = true,
-        tick = null;
+        tick = null,
+        turnInterval = null;
 
     $('.break-controls .minus').click(function () {
         console.log('a');
@@ -78,6 +79,7 @@ $(document).ready(function () {
     });
 
     $('.clock-container').click(function () {
+        clearInterval(turnInterval);
         if (setUpState) {
             setUpState = false;
             sessionActive = true;
@@ -103,8 +105,10 @@ $(document).ready(function () {
             setUpState = true;
             clearInterval(tick);
             $('.clock-container').css('transform', 'rotateZ(180deg) scale(0.8)');
-            $('.controls *').css('display', 'block');
-            displayStatus();
+            turnInterval = setInterval(function () {
+                $('.controls *').css('display', 'block');
+                displayStatus();
+            }, 1000);
         }
     });
 
