@@ -16,7 +16,7 @@ function setActiveSessionBreak(procent) {
     var height = 430 * procent,
         el = $('.progress-bar-break');
     el.css('height', height);
-    el.css('margin-top', '-125px');
+    el.css('margin-top', '-120px');
 }
 
 function setPassiveSessionBreak(procent) {
@@ -86,7 +86,7 @@ $(document).ready(function () {
             $('.controls * *').css('display', 'none');
             $('.clock-container').css('transform', 'rotateZ(0) scale(0.8)');
             tick = setInterval(function () {
-                time++;
+                time += 0.01;
                 if (sessionActive && time > sessionTime) {
                     time = 0;
                     sessionActive = false;
@@ -98,7 +98,7 @@ $(document).ready(function () {
                     $('.clock-container').css('transform', 'rotateZ(0) scale(0.8)');
                 }
                 displayStatus();
-            }, 1000);
+            }, 10);
         } else {
             sessionActive = false;
             time = 0;
@@ -128,14 +128,14 @@ $(document).ready(function () {
             if (sessionActive) {
                 $('.timer').css('transform', 'rotateZ(0)');
                 $('.label-session').css('display', 'block');
-                $('.timer-session').text(formatTime(sessionTime - time));
+                $('.timer-session').text(formatTime(sessionTime - Math.floor(time)));
                 var progress = time / sessionTime;
                 setActiveSessionProgress(1 - progress);
                 setPassiveSessionBreak(progress);
             } else {
                 $('.timer').css('transform', 'rotateZ(180deg)');
                 $('.label-break').css('display', 'block');
-                $('.timer-break').text(formatTime(breakTime - time));
+                $('.timer-break').text(formatTime(breakTime - Math.floor(time)));
                 var progress = time / breakTime;
                 setActiveSessionBreak(1 - progress);
                 setPassiveSessionProgress(progress);
