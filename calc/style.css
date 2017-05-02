@@ -1,0 +1,73 @@
+body {
+    background-color: dimgray;
+}
+
+.calc {
+    width: 450px;
+    height: 800px;
+    background-color: black;
+    margin: auto;
+    margin-top: 50px;
+    border: 5px black solid;
+}
+
+.calc-display {
+    background-color: white;
+    width: 450px;
+    height: 150px;
+    padding-right: 50px;
+    color: #4f5b62;
+    box-sizing: border-box;
+}
+
+.display-history {
+    font-size: 23px;
+    float: right;
+    margin-top: 20px;
+}
+
+.display-current {
+    clear: both;
+    float: right;
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+.btn-row {
+    width: 450px;
+    height: 130px;
+}
+
+.btn {
+    box-sizing: border-box;
+    height: 130px;
+    line-height: 130px;
+    width: 112.5px;
+    font-size: 60px;
+    background-color: white;
+    border-radius: 0;
+    color: black;
+    float: left;
+    text-align: center;
+}
+
+.btn:active {
+    background-color: gainsboro;
+}
+
+.btn:not(:last-child) {
+    border-right: white 1px solid;
+}
+
+.btn-row:not(:last-child) .btn {
+    border-bottom: white 1px solid;
+    ;
+}
+
+.btn.btn-color {
+    background-color: #00838F;
+}
+
+.btn.btn-color:active {
+    background-color: #00acc1;
+}
