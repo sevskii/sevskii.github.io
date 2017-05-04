@@ -68,21 +68,17 @@ $(document).ready(function () {
     };
 
     var history = new Calculator();
-    var current = "";
-    var currentIsNumber = false;
+    var current = "0";
+    var currentIsNumber = true;
 
     function formatString(str) {
-        if (!str || str.length == 0)
-            return '0';
         str = str.substr(0, 13);
         var parts = str.split('.');
         var result = '';
         var i = 1;
-        console.log(str);
         while (parts[0].length - i >= 0) {
             result += parts[0][parts[0].length - i];
-            console.log(parts[0].length - i + ';' + Number.isInteger(parts[0][length - i]));
-            var symbCode = parts[0].charCodeAt(length - i);
+            var symbCode = parts[0].charCodeAt(parts[0].length - i - 1);
             if (i % 3 == 0 && parts[0].length - i > 0 && (symbCode >= '0'.charCodeAt(0) && symbCode <= '9'.charCodeAt(0))) {
                 result += ',';
             }
@@ -97,17 +93,17 @@ $(document).ready(function () {
                 return el.symbol == current;
             }));
             $('.display-history').text(history.getString());
-            current = '';
+            current = '0';
         }
         currentIsNumber = true;
         var myNum = $(this).text();
-        if (current.length == 0 && myNum == '00')
-            current += '0';
-        else if (current == '0')
+        if ((current.length == 0 || current == '0') && myNum == '00')
+            current = '0';
+        else if (current == '0' && myNum != '.')
             current = myNum;
-        else if (!(myNum.indexOf('0') != -1 && current[0] == 0) || current.indexOf('.') != -1) {
-            if (myNum == '.' && current.length == 0)
-                current += '0.';
+        else if (!(myNum.indexOf('0') != -1 && current[0] == '0') || current.indexOf('.') != -1) {
+            if (myNum == '.' && current == '0')
+                current = '0.';
             else if (current.length < 13 && (myNum != '.' || current.indexOf('.') == -1)) {
                 current += myNum;
             }
@@ -116,18 +112,26 @@ $(document).ready(function () {
     });
 
     $('.display-erase').click(function () {
-        if (current.length > 0)
+        if (current.length > 0) {
             current = current.substr(0, current.length - 1);
+            currentIsNumber = true;
+        }
+        if (current.length == 0)
+            current = '0'
+        if ($('.display-current').text() == 'Infinity' || $('.display-current').text() == 'NaN')
+            current = '0';
         $('.display-current').text(formatString(current));
     });
 
     $('.btn-CE').click(function () {
-        current = '';
+        current = '0';
+        currentIsNumber = true;
         $('.display-current').text(formatString(current));
     });
 
     $('.btn-AC').click(function () {
-        current = '';
+        current = '0';
+        currentIsNumber = true;
         $('.display-current').text(formatString(current));
         history.numbers = [];
         history.actions = [];
