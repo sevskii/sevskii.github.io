@@ -72,6 +72,8 @@ $(document).ready(function () {
     var currentIsNumber = true;
 
     function formatString(str) {
+        if (str.split('.')[0].length > 13)
+            return 'Infinity';
         str = str.substr(0, 13);
         var parts = str.split('.');
         var result = '';

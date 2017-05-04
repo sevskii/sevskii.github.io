@@ -26,6 +26,20 @@ body {
     float: right;
     margin-top: 20px;
     height: 23px;
+    width: 370px;
+    text-align: right;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    user-select: auto;
+}
+
+::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
 }
 
 .display-current {
@@ -33,6 +47,7 @@ body {
     float: right;
     margin-top: 10px;
     font-size: 50px;
+    user-select: auto;
 }
 
 .display-erase {
