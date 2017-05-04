@@ -37,9 +37,9 @@ body {
 
 .display-erase {
     position: absolute;
-    font-size: 50px;
-    left: 380px;
-    top: 50px;
+    font-size: 40px;
+    left: 385px;
+    top: 65px;
 }
 
 .display-erase:active {
@@ -83,4 +83,8 @@ body {
 
 .btn.btn-color:active {
     background-color: #00acc1;
+}
+
+.btn-AC {
+    width: 225px;
 }
