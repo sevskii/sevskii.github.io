@@ -4,31 +4,70 @@
 
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
     <link rel='stylesheet' href='style.css' />
 </head>
 
 <body>
-    <div class='field'>
-        <div class='decarations'>
-            <div class='fixer fixer-1'>
-                <div class='circle'></div>
-                <div class="hole"></div>
-            </div>
-            <div class='fixer fixer-2'>
-                <div class='circle'></div>
-                <div class="hole"></div>
-            </div>
+    <div class='decarations'>
+        <div class='fixer fixer-1'>
+            <div class='circle'></div>
+            <div class="hole"></div>
         </div>
+        <div class='fixer fixer-2'>
+            <div class='circle'></div>
+            <div class="hole"></div>
+        </div>
+    </div>
+    <div class='field' id='play-field' style=''>
         <div class="paper">
             <div class='play-field'>
                 <div class='vertical-line vertical-line-1'></div>
                 <div class='vertical-line vertical-line-2'></div>
                 <div class='horisontal-line horisontal-line-1'></div>
                 <div class='horisontal-line horisontal-line-2'></div>
+                <div class='cells'>
+                    <div class='cells-row'>
+                        <div id='cell-1-1' class='cell'></div>
+                        <div id='cell-1-2' class='cell'></div>
+                        <div id='cell-1-3' class='cell'></div>
+                    </div>
+                    <div class='cells-row'>
+                        <div id='cell-2-1' class='cell'></div>
+                        <div id='cell-2-2' class='cell'></div>
+                        <div id='cell-2-3' class='cell'></div>
+                    </div>
+                    <div class='cells-row'>
+                        <div id='cell-3-1' class='cell'></div>
+                        <div id='cell-3-2' class='cell'></div>
+                        <div id='cell-4-3' class='cell'></div>
+                    </div>
+                </div>
             </div>
-            <div class='next-button'>
-                <i class='fa fa-caret-down '></i>
+            <div class='btn-control next-button'>
+                <i class='fa fa-repeat'></i>
+            </div>
+            <div class='btn-control home-button'>
+                <i class='fa fa-home'></i>
             </div>
         </div>
+    </div>
+    <div class='field' id='menu'>
+        <h1 class='title'>Tic-tac-toe</h1>
+        <div class='settings-row setting-1'>
+            <div class='setting-title'>First player</div>
+            <div class='setting-options'>
+                <div class='option option-1' id='fp-x' data-option-index='0' data-option-argument='0'>X</div>
+                <div class='option option-2' id='fp-o' data-option-index='0' data-option-argument='1'>O</div>
+            </div>
+        </div>
+        <div class='settings-row setting-2'>
+            <div class='setting-title'>Second player</div>
+            <div class='setting-options'>
+                <div class='option option-1' id='sp-man' data-option-index='1' data-option-argument='0'>Man</div>
+                <div class='option option-2' id='sp-ai' data-option-index='1' data-option-argument='1'>AI</div>
+            </div>
+        </div>
+        <div class='start-btn '>Start</div>
     </div>
 </body>
