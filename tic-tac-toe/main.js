@@ -29,6 +29,8 @@ $(document).ready(function () {
             fieldArr = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
             intaractive = false;
             gameDone = false;
+            currTurn = 0;
+
             var newField = playFieldTemplate.clone();
             newField.css('z-index', '-1');
             var oldField = $('.field');
@@ -36,12 +38,12 @@ $(document).ready(function () {
             oldField.css('top', '2000px');
 
             setTimeout(function () {
-                if (secondPlayerAi && firstPlayer == 1)
-                    botTurn();
                 intaractive = true;
                 newField.css('z-index', '0');
                 intaractive = true;
                 $(oldField).remove();
+                if (secondPlayerAi && firstPlayer == 1)
+                    botTurn();
             }, 1000);
             $('body').append(newField);
             newField.children().children('.next-button').click(respawnField);
@@ -134,7 +136,7 @@ $(document).ready(function () {
             for (var i = 0; i < fieldArr.length; i++)
                 for (var j = 0; j < fieldArr[i].length; j++) {
                     if (fieldArr[j][i] == -1) {
-                        if (firstPlayer) {
+                        if (!currTurn) {
                             fieldArr[j][i] = 0;
                             $('#cell-' + (i + 1) + '-' + (j + 1)).text('X');
                             if (currTurn == 0) {
