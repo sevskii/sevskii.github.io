@@ -105,25 +105,21 @@ body {
     font-size: 70px;
     height: 73px;
     text-align: center;
-    background-color: rgba(10, 10, 10, 0.2);
     margin-top: 67px;
     display: inline-block;
     float: right;
+    border: 5px grey solid;
+    border-bottom: none;
 }
 
-.btn-control:not(:last-child) {
-    border-right: 5px transparent solid;
+.next-button {
+    border-right: none;
+    float: right;
 }
-
-.next-button i {}
 
 .home-button {
     float: left;
-}
-
-.btn-control:hover,
-.btn-control:active {
-    background-color: rgba(10, 10, 10, 0.3);
+    border-left: none;
 }
 
 .cells {
@@ -184,11 +180,11 @@ body {
 }
 
 .setting-1 {
-    margin-top: 72px;
+    margin-top: 22px;
 }
 
 .setting-2 {
-    margin-top: 22px;
+    margin-top: 72px;
     font-size: 50px;
 }
 
@@ -216,7 +212,8 @@ body {
     border-radius: 10px;
 }
 
-.start-btn:active {
+.start-btn:active,
+.btn-control:active {
     border-color: black;
 }
 

@@ -36,6 +36,8 @@ $(document).ready(function () {
             oldField.css('top', '2000px');
 
             setTimeout(function () {
+                if (secondPlayerAi && firstPlayer == 1)
+                    botTurn();
                 intaractive = true;
                 newField.css('z-index', '0');
                 intaractive = true;
@@ -70,10 +72,11 @@ $(document).ready(function () {
                             if (a) {
                                 $(winCombos[i][winCombos[i].length - 1]).css('display', 'block');
                                 gameDone = true;
-                                console.log('win ' + i + ' ' + symb);
                             }
                         }
                     }
+                    if (secondPlayerAi && currTurn != firstPlayer)
+                        botTurn();
                 }
             });
         }
@@ -99,15 +102,25 @@ $(document).ready(function () {
             }, 1000);
             $('body').append(newMenu);
 
-            newMenu.children('.settings-row').children('.setting-options').children('.option').click(function () {
-                if ($(this).data('option-index') == 0) {
-                    firstPlayer = $(this).data('option-argument');
-                } else if ($(this).data('option-index') == 1) {
-                    secondPlayerAi = $(this).data('option-argument');
-                }
-                $(this).parent().children('.selected').removeClass('selected');
-                $(this).addClass('selected');
+            if (secondPlayerAi)
+                $('.setting-1').css('display', 'block');
+            else
+                $('.setting-1').css('display', 'none');
 
+            newMenu.children('.settings-row').children('.setting-options').children('.option').click(function () {
+                if (!$(this).hasClass('selected')) {
+                    if ($(this).data('option-index') == 0) {
+                        firstPlayer = $(this).data('option-argument');
+                    } else if ($(this).data('option-index') == 1) {
+                        secondPlayerAi = $(this).data('option-argument');
+                        if (secondPlayerAi)
+                            $('.setting-1').css('display', 'block');
+                        else
+                            $('.setting-1').css('display', 'none');
+                    }
+                    $(this).parent().children('.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
 
             });
             newMenu.children('.start-btn').click(respawnField);
@@ -116,5 +129,64 @@ $(document).ready(function () {
     }
     respawnMenu();
 
-
+    function botTurn() {
+        if (!gameDone) {
+            for (var i = 0; i < fieldArr.length; i++)
+                for (var j = 0; j < fieldArr[i].length; j++) {
+                    if (fieldArr[j][i] == -1) {
+                        if (firstPlayer) {
+                            fieldArr[j][i] = 0;
+                            $('#cell-' + (i + 1) + '-' + (j + 1)).text('X');
+                            if (currTurn == 0) {
+                                currTurn++;
+                            } else {
+                                currTurn = 0;
+                            }
+                            for (var i = 0; i < winCombos.length; i++) {
+                                var a = true;
+                                var symb = fieldArr[winCombos[i][0][0]][winCombos[i][0][1]];
+                                if (symb == -1)
+                                    continue;
+                                for (var j = 1; j < winCombos[i].length - 1; j++) {
+                                    if (fieldArr[winCombos[i][j][0]][winCombos[i][j][1]] != symb) {
+                                        a = false;
+                                        break;
+                                    }
+                                }
+                                if (a) {
+                                    $(winCombos[i][winCombos[i].length - 1]).css('display', 'block');
+                                    gameDone = true;
+                                }
+                            }
+                            return;
+                        } else {
+                            fieldArr[j][i] = 1;
+                            $('#cell-' + (i + 1) + '-' + (j + 1)).text('O');
+                            if (currTurn == 0) {
+                                currTurn++;
+                            } else {
+                                currTurn = 0;
+                            }
+                            for (var i = 0; i < winCombos.length; i++) {
+                                var a = true;
+                                var symb = fieldArr[winCombos[i][0][0]][winCombos[i][0][1]];
+                                if (symb == -1)
+                                    continue;
+                                for (var j = 1; j < winCombos[i].length - 1; j++) {
+                                    if (fieldArr[winCombos[i][j][0]][winCombos[i][j][1]] != symb) {
+                                        a = false;
+                                        break;
+                                    }
+                                }
+                                if (a) {
+                                    $(winCombos[i][winCombos[i].length - 1]).css('display', 'block');
+                                    gameDone = true;
+                                }
+                            }
+                            return;
+                        }
+                    }
+                }
+        }
+    }
 });
