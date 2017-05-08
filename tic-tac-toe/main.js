@@ -1,6 +1,21 @@
 $(document).ready(function () {
     var firstPlayer = 0;
     var secondPlayerAi = 0;
+    var gameDone = false;
+    var fieldArr = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
+    var winCombos = [ //vertical lines
+                    [[0, 0], [0, 1], [0, 2], '#wl-4'],
+                    [[1, 0], [1, 1], [1, 2], '#wl-5'],
+                    [[2, 0], [2, 1], [2, 2], '#wl-6'],
+                    //horisontal lines
+                    [[0, 0], [1, 0], [2, 0], '#wl-1'],
+                    [[0, 1], [1, 1], [2, 1], '#wl-2'],
+                    [[0, 2], [1, 2], [2, 2], '#wl-3'],
+                    //crossed lines
+                    [[0, 0], [1, 1], [2, 2], '#wl-7'],
+                    [[2, 0], [1, 1], [0, 2], '#wl-8']
+                    ];
+    var currTurn = 0;
 
     var intaractive = true;
 
@@ -11,7 +26,9 @@ $(document).ready(function () {
 
     function respawnField() {
         if (intaractive) {
+            fieldArr = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
             intaractive = false;
+            gameDone = false;
             var newField = playFieldTemplate.clone();
             newField.css('z-index', '-1');
             var oldField = $('.field');
@@ -27,6 +44,38 @@ $(document).ready(function () {
             $('body').append(newField);
             newField.children().children('.next-button').click(respawnField);
             newField.children().children('.home-button').click(respawnMenu);
+            newField.children('.paper').children('.play-field').children('.cells').children('.cells-row').children('.cell').click(function () {
+                if (!gameDone) {
+                    if ($(this).text() == '') {
+                        if (currTurn == 0) {
+                            fieldArr[$(this).data('cell-x')][$(this).data('cell-y')] = 0;
+                            $(this).text('X');
+                            currTurn++;
+                        } else {
+                            fieldArr[$(this).data('cell-x')][$(this).data('cell-y')] = 1;
+                            $(this).text('O');
+                            currTurn = 0;
+                        }
+                        for (var i = 0; i < winCombos.length; i++) {
+                            var a = true;
+                            var symb = fieldArr[winCombos[i][0][0]][winCombos[i][0][1]];
+                            if (symb == -1)
+                                continue;
+                            for (var j = 1; j < winCombos[i].length - 1; j++) {
+                                if (fieldArr[winCombos[i][j][0]][winCombos[i][j][1]] != symb) {
+                                    a = false;
+                                    break;
+                                }
+                            }
+                            if (a) {
+                                $(winCombos[i][winCombos[i].length - 1]).css('display', 'block');
+                                gameDone = true;
+                                console.log('win ' + i + ' ' + symb);
+                            }
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -66,4 +115,6 @@ $(document).ready(function () {
         }
     }
     respawnMenu();
+
+
 });

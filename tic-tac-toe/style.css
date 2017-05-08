@@ -100,7 +100,7 @@ body {
 }
 
 .btn-control {
-    width: 45%;
+    width: 200px;
     color: black;
     font-size: 70px;
     height: 73px;
@@ -218,4 +218,61 @@ body {
 
 .start-btn:active {
     border-color: black;
+}
+
+.win-line {
+    display: none;
+    position: absolute;
+    background-color: #333;
+}
+
+.win-line-horizontal {
+    width: 400px;
+    height: 10px;
+    left: 10px;
+}
+
+#wl-1 {
+    top: 63px;
+}
+
+#wl-2 {
+    top: 195px;
+}
+
+#wl-3 {
+    top: 331px;
+}
+
+.win-line-vetical {
+    height: 400px;
+    width: 10px;
+    top: 1px;
+}
+
+#wl-4 {
+    left: 64px;
+}
+
+#wl-5 {
+    left: 204px;
+}
+
+#wl-6 {
+    left: 344px;
+}
+
+.win-line-cross {
+    height: 500px;
+    width: 10px;
+    top: -55px;
+    left: 200px;
+}
+
+#wl-7 {
+    transform: rotateZ(-45deg);
+}
+
+#wl-8 {
+    transform: rotateZ(45deg);
 }
