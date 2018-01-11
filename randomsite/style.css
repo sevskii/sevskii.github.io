@@ -1,7 +1,45 @@
-.wrapper{
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  height:100%;
-  align-items: center;
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+    color: white;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+.section {
+    transition: flex-grow 1s ease 0.3s;
+   flex-grow: 1;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.section:hover{
+    flex-grow: 2;
+}
+
+.section-seva {
+    background-image: url("https://pp.userapi.com/c624725/v624725783/4814/klHbLm4HOuY.jpg");
+}
+
+.section-nastya{
+    background-image: url("https://pp.userapi.com/c836420/v836420432/376d1/Fur2d2HPkS0.jpg");
+}
+
+.section-masha{
+    background-image: url("https://pp.userapi.com/c620028/v620028469/553c/_4IauUawRd4.jpg");
 }
