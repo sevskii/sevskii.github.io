@@ -5,6 +5,37 @@
     height: 100%;
     align-items: center;
     color: white;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.sliders{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer{
+    flex-basis: 100px;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    display: flex;
+}
+
+ol{
+    text-align: left;
+    align-self: center;
+    font-size: 15px;
+}
+
+.timer{
+    align-self: center;
+    margin-right: 20px;
+    margin-left: auto;
+
+    font-size: 50px;
 }
 
 h1{
@@ -23,9 +54,22 @@ h2{
     background-size: cover;
     background-position: center;
     display: flex;
+    position: relative;
     text-align: center;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
+}
+
+.cover{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.info{
+    position:absolute;
 }
 
 .section:hover{
@@ -42,4 +86,8 @@ h2{
 
 .section-masha{
     background-image: url("https://pp.userapi.com/c620028/v620028469/553c/_4IauUawRd4.jpg");
+}
+
+img{
+    height: 40px;
 }
