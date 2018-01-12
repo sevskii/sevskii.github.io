@@ -16,6 +16,7 @@ $(document).ready(function () {
     updateTimer();
 
     function updateTimer() {
+        currDate = new Date();
         var offset = parseInt((refreshDate - currDate) / 1000);
         $(".timer").text(twoD(parseInt(offset / 60 / 60)) + ":" + twoD(parseInt(offset / 60 % 60)) + ":" + twoD(parseInt(offset % 60)));
 
