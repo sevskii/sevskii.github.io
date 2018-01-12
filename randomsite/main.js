@@ -19,7 +19,7 @@ $(document).ready(function () {
         var offset = parseInt((refreshDate - currDate) / 1000);
         $(".timer").text(twoD(parseInt(offset / 60 / 60)) + ":" + twoD(parseInt(offset / 60 % 60)) + ":" + twoD(parseInt(offset % 60)));
 
-        if (+offset <= 1000) {
+        if (+offset <= 1) {
             setTimeout(function () {
                 location.reload(true);
             }, 1000);
