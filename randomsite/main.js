@@ -10,14 +10,17 @@ $(document).ready(function () {
 
     function updateTimer() {
         var currDate = new Date();
+        var refreshDate;
         var offset;
         if (currDate.getHours() < 7) {
-            offset = new Date(new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate(), 4) - currDate);
+            refreshDate = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate(), 6);
         } else {
-            offset = new Date(new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate() + 1, 4) - currDate);
+            refreshDate = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate() + 1, 6);
         }
-        $(".timer").text(twoD(offset.getHours()) + ":" + twoD(offset.getMinutes()) + ":" + twoD(offset.getSeconds()));
-        if (offset.getTime() <= 1000) {
+        var offset = parseInt((refreshDate - currDate) / 1000);
+        $(".timer").text(twoD(parseInt(offset / 60 / 60)) + ":" + twoD(parseInt(offset / 60 % 60)) + ":" + twoD(parseInt(offset % 60)));
+
+        if (+offset <= 1000) {
             setTimeout(function () {
                 location.reload(true);
             }, 1000);
