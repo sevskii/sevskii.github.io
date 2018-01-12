@@ -6,17 +6,16 @@ $(document).ready(function () {
         $("#sr").text(parseInt(Math.random() * 5) + 1);
     });
     setInterval(updateTimer, 1000);
+    var currDate = new Date();
+    var refreshDate;
+    if (currDate.getHours() < 7) {
+        refreshDate = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate(), 7);
+    } else {
+        refreshDate = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate() + 1, 7);
+    }
     updateTimer();
 
     function updateTimer() {
-        var currDate = new Date();
-        var refreshDate;
-        var offset;
-        if (currDate.getHours() < 7) {
-            refreshDate = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate(), 6);
-        } else {
-            refreshDate = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate() + 1, 6);
-        }
         var offset = parseInt((refreshDate - currDate) / 1000);
         $(".timer").text(twoD(parseInt(offset / 60 / 60)) + ":" + twoD(parseInt(offset / 60 % 60)) + ":" + twoD(parseInt(offset % 60)));
 
