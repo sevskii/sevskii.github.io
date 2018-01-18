@@ -18,7 +18,7 @@
 }
 
 .footer{
-    flex-basis: 100px;
+    flex-basis: 150px;
     background-color: rgba(0,0,0,0.7);
     width: 100%;
     display: flex;
